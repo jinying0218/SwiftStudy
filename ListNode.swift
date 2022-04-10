@@ -1,41 +1,41 @@
 //
-//  LinkList.swift
+//  ListNode.swift
 //  AlgorithmSwift
 //
-//  Created by YY on 2022/4/8.
-//  LC 设计链表
+//  Created by YY on 2022/4/10.
+//
 
 import Foundation
 
-// MARK: - 链表
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * let obj = MyLinkedList()
- * let ret_1: Int = obj.get(index)
- * obj.addAtHead(val)
- * obj.addAtTail(val)
- * obj.addAtIndex(index, val)
- * obj.deleteAtIndex(index)
- */
-
-class MyLinkedList {
-    
-    class LinkNode {
-        var value: Int?
-        var next: LinkNode?
-        
-        init(_ value: Int) {
-            self.value = value
-            self.next = nil
-        }
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() {
+        self.val = 0
+        self.next = nil
     }
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+    public init(_ val: Int, _ next: ListNode?) {
+        self.val = val
+        self.next = next
+    }
+}
+
+class LinkedList {
     
     var size: Int = 0
-    var head: LinkNode?
+    var head: ListNode?
 
     init() {
         
+    }
+    init(_ array:[Int]) {
+        for i in array {
+            addAtTail(i)
+        }
     }
     
     func get(_ index: Int) -> Int {
@@ -48,21 +48,20 @@ class MyLinkedList {
             node = node?.next
             i += 1
         }
-        return node!.value ?? -1
+        return node!.val
     }
     
     func addAtHead(_ val: Int) {
-        let newNode = LinkNode.init(val)
+        let newNode = ListNode.init(val)
         newNode.next = head
         head = newNode
         size += 1
-        showAllNode()
     }
     
     func addAtTail(_ val: Int) {
-        let newNode = LinkNode.init(val)
+        let newNode = ListNode.init(val)
         if head == nil {
-            let newNode = LinkNode.init(val)
+            let newNode = ListNode.init(val)
             newNode.next = head
             head = newNode
         }else {
@@ -71,13 +70,12 @@ class MyLinkedList {
             tail = newNode
         }
         size += 1
-        showAllNode()
     }
     
     func addAtIndex(_ index: Int, _ val: Int) {
-        let newNode = LinkNode.init(val)
+        let newNode = ListNode.init(val)
         if index == 0 {
-            let newNode = LinkNode.init(val)
+            let newNode = ListNode.init(val)
             newNode.next = head
             head = newNode
         }else {
@@ -86,7 +84,6 @@ class MyLinkedList {
             prev?.next = newNode
         }
         size += 1
-        showAllNode()
     }
     
     func deleteAtIndex(_ index: Int) {
@@ -101,10 +98,9 @@ class MyLinkedList {
             prev?.next = prev?.next?.next
         }
         size -= 1
-        showAllNode()
     }
     
-    private func getNode(_ index: Int) -> LinkNode? {
+    func getNode(_ index: Int) -> ListNode? {
         guard index < size && index >= 0 else {
             return nil
         }
@@ -127,13 +123,12 @@ class MyLinkedList {
         var node = head
         while i < size {
             if i == size - 1 {
-                print("\(String(describing: node!.value))")
+                print("\(String(describing: node?.val)) pos：\(node?.next != nil)")
             }else {
-                print("\(String(describing: node!.value)) > ",terminator:"")
+                print("\(String(describing: node?.val)) > ",terminator:"")
             }
             node = node?.next
             i += 1
         }
     }
 }
-

@@ -63,12 +63,12 @@ print("初始化链表")
 //print("get:\(val2)")
 
 // MARK: - 用例2
-mylist.addAtHead(1)
-mylist.addAtTail(3)
-mylist.addAtIndex(1, 2)
-print("get:\(mylist.get(1))")
-mylist.deleteAtIndex(0)
-print("get:\(mylist.get(0))")
+//mylist.addAtHead(1)
+//mylist.addAtTail(3)
+//mylist.addAtIndex(1, 2)
+//print("get:\(mylist.get(1))")
+//mylist.deleteAtIndex(0)
+//print("get:\(mylist.get(0))")
 
 // MARK: - 用例3
 //mylist.addAtIndex(0, 10)
@@ -92,3 +92,29 @@ print("get:\(mylist.get(0))")
  * obj.addAtIndex(index, val)
  * obj.deleteAtIndex(index)
  */
+
+// MARK: - 206
+//let _206 = Solution206()
+//_206.linkList.head = _206.reverseList1(_206.linkList.head)
+//_206.linkList.showAllNode()
+
+//let _141 = Solution141()
+//_141.linkList.showAllNode()
+
+//print(_141.hasCycle(_141.linkList.head))
+
+// MARK: - 203
+let _203 = Solution203()
+/// 用例1
+//let linkList = LinkedList.init([1,2,6,3,4,5,6])
+//_203.linkList = linkList
+//_203.linkList?.showAllNode()
+//_203.removeElements(_203.linkList?.head, 6)
+//_203.linkList?.showAllNode()
+
+/// 用例2
+let linkList = LinkedList.init([1])
+_203.linkList = linkList
+_203.linkList?.showAllNode()
+_203.removeElements(_203.linkList?.head, 2)
+_203.linkList?.showAllNode()
