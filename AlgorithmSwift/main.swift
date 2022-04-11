@@ -125,10 +125,20 @@ print("初始化链表")
 //let linkList = LinkedList.init([1,1,2,3,3])
 //let linkList = LinkedList.init([0,0,0,0,0])
 //let linkList = LinkedList.init()
-let linkList = LinkedList.init([0,0,0,0,3])
+//let linkList = LinkedList.init([0,0,0,0,3])
 
-let _83 = Solution83()
-_83.linkList = linkList
-_83.linkList?.showHeadNode(linkList.head)
-let newHead = _83.deleteDuplicates(linkList.head)
-_83.linkList?.showHeadNode(newHead)
+//let _83 = Solution83()
+//_83.linkList = linkList
+//_83.linkList?.showHeadNode(linkList.head)
+//let newHead = _83.deleteDuplicates(linkList.head)
+//_83.linkList?.showHeadNode(newHead)
+
+// MARK: - 876.链表的中间结点
+//let linkList = LinkedList.init([1,2,3,4,5])
+//let linkList = LinkedList.init([1,2,3,4,5,6])
+
+let _876 = Solution876()
+_876.linkList = linkList
+_876.linkList?.showHeadNode(linkList.head)
+let newHead = _876.middleNode(linkList.head)
+_876.linkList?.showHeadNode(newHead)

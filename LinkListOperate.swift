@@ -205,3 +205,42 @@ class Solution83 {
     }
 
 }
+
+// 876. 链表的中间结点 https://leetcode-cn.com/problems/middle-of-the-linked-list/
+class Solution876 {
+    
+    var linkList: LinkedList?
+
+    /// 遍历两次
+//    func middleNode(_ head: ListNode?) -> ListNode? {
+//
+//        var temp = head
+//        var count = 0
+//        while temp != nil {
+//            count += 1
+//            temp = temp?.next
+//        }
+//        let index = count/2
+//        print("中间索引index：\(index)")
+//
+//        var i = 0
+//        temp = head
+//        while i < index {
+//            temp = temp?.next
+//            i += 1
+//        }
+//
+//        return temp
+//    }
+    /// 双指针
+    func middleNode(_ head: ListNode?) -> ListNode? {
+        
+        var slow = head
+        var fast = head
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        return slow
+    }
+}
