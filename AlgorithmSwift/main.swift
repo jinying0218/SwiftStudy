@@ -125,7 +125,7 @@ print("初始化链表")
 //let linkList = LinkedList.init([1,1,2,3,3])
 //let linkList = LinkedList.init([0,0,0,0,0])
 //let linkList = LinkedList.init()
-//let linkList = LinkedList.init([0,0,0,0,3])
+let linkList = LinkedList.init([0,0,0,0,3])
 
 let _83 = Solution83()
 _83.linkList = linkList
