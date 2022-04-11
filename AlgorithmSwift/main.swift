@@ -50,7 +50,7 @@ swapeStringValue(&astring, &bstring)
 
 //let obj = MyLinkedList()
 
-let mylist = MyLinkedList()
+//let mylist = MyLinkedList()
 print("初始化链表")
 // MARK: - 用例1
 //mylist.addAtHead(1)
@@ -104,7 +104,7 @@ print("初始化链表")
 //print(_141.hasCycle(_141.linkList.head))
 
 // MARK: - 203
-let _203 = Solution203()
+//let _203 = Solution203()
 /// 用例1
 //let linkList = LinkedList.init([1,2,6,3,4,5,6])
 //_203.linkList = linkList
@@ -113,8 +113,22 @@ let _203 = Solution203()
 //_203.linkList?.showAllNode()
 
 /// 用例2
-let linkList = LinkedList.init([1])
-_203.linkList = linkList
-_203.linkList?.showAllNode()
-_203.removeElements(_203.linkList?.head, 2)
-_203.linkList?.showAllNode()
+//let linkList = LinkedList.init([1])
+//_203.linkList = linkList
+//_203.linkList?.showAllNode()
+//_203.removeElements(_203.linkList?.head, 2)
+//_203.linkList?.showAllNode()
+
+
+// MARK: -  83.删除排序链表中的重复元素
+//let linkList = LinkedList.init([1,1,2])
+//let linkList = LinkedList.init([1,1,2,3,3])
+//let linkList = LinkedList.init([0,0,0,0,0])
+//let linkList = LinkedList.init()
+//let linkList = LinkedList.init([0,0,0,0,3])
+
+let _83 = Solution83()
+_83.linkList = linkList
+_83.linkList?.showHeadNode(linkList.head)
+let newHead = _83.deleteDuplicates(linkList.head)
+_83.linkList?.showHeadNode(newHead)

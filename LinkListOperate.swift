@@ -142,13 +142,6 @@ class Solution203 {
     var linkList: LinkedList?
     
     init() {
-//        linkList.addAtHead(1)
-//        linkList.addAtTail(2)
-//        linkList.addAtTail(6)
-//        linkList.addAtTail(3)
-//        linkList.addAtTail(4)
-//        linkList.addAtTail(5)
-//        linkList.addAtTail(6)
     }
     
     func getNode(_ head: ListNode?, _ val: Int) -> ListNode? {
@@ -185,4 +178,30 @@ class Solution203 {
         
         return dummyNode.next
     }
+}
+
+// 83. 删除排序链表中的重复元素 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+class Solution83 {
+    
+    var linkList: LinkedList?
+    
+    init() {
+        
+    }
+    
+    func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+
+        let prev = head
+        var temp = head
+
+        while temp?.next != nil {
+            if temp?.val == temp?.next?.val {
+                temp?.next = temp?.next?.next
+            }else {
+                temp = temp?.next
+            }
+        }
+        return prev
+    }
+
 }

@@ -118,6 +118,18 @@ class LinkedList {
         self.head = nil
     }
     
+    func showHeadNode(_ head: ListNode?) {
+        var node = head
+        while node != nil {
+            if node?.next != nil {
+                print("\(String(describing: node?.val)) > ",terminator:"")
+            }else {
+                print("\(String(describing: node?.val)) pos：\(node?.next != nil)")
+            }
+            node = node?.next
+        }
+    }
+    
     func showAllNode() {
         var i = 0
         var node = head
