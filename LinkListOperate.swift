@@ -10,7 +10,7 @@ import Foundation
 
 
 
-// 237. 删除链表中的节点 https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
+//MARK: - 237. 删除链表中的节点 https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 class Solution237 {
     func deleteNode(_ node: ListNode?) {
         node?.val = node!.next!.val
@@ -19,7 +19,7 @@ class Solution237 {
 }
 
 
-// 206. 反转链表 https://leetcode-cn.com/problems/reverse-linked-list/
+//MARK: - 206. 反转链表 https://leetcode-cn.com/problems/reverse-linked-list/
 class Solution206 {
     
     var linkList = LinkedList()
@@ -72,21 +72,21 @@ class Solution206 {
     }
 }
 
-// 141. 环形链表 https://leetcode-cn.com/problems/linked-list-cycle/
+//MARK: - 141. 环形链表 https://leetcode-cn.com/problems/linked-list-cycle/
 class Solution141 {
     
     var linkList = LinkedList()
     
     init() {
-        linkList.addAtHead(1)
+        linkList.addAtHead(3)
         linkList.addAtTail(2)
-        linkList.addAtTail(3)
-        linkList.addAtTail(4)
-        linkList.addAtTail(5)
+        linkList.addAtTail(0)
+        linkList.addAtTail(-4)
+//        linkList.addAtTail(5)
         
-//        let node3 = linkList.getNode(3)
-//        let node4 = linkList.getNode(4)
-//        node4?.next = node3
+        let node3 = linkList.getNode(2)
+        let node4 = linkList.getNode(3)
+        node4?.next = node3
     }
     
     func hasCycle0(_ head: ListNode?) -> Bool {
@@ -113,7 +113,7 @@ class Solution141 {
         return false
     }
     /// 判断是否有环
-    func hasCycle(_ head: ListNode?) -> Bool {
+    func hasCycle1(_ head: ListNode?) -> Bool {
         
         if head == nil || head?.next == nil {
             return false
@@ -133,9 +133,88 @@ class Solution141 {
         
         return false
     }
+    func hasCycle(_ head: ListNode?) -> Bool {
+        
+        if head == nil || head?.next == nil {
+            return false
+        }
+        let set = NSMutableSet.init()
+        var temp = head
+        while temp !=  nil {
+            if set.contains(temp as Any) == true {
+                return true
+            }
+            set.add(temp as Any)
+            temp = temp?.next
+        }
+        return false
+    }
 }
 
-// 203. 移除链表元素 https://leetcode-cn.com/problems/remove-linked-list-elements/
+//MARK: - 142. 环形链表 II https://leetcode-cn.com/problems/linked-list-cycle-ii/
+class Solution142 {
+    
+    var linkList = LinkedList()
+
+    func detectCycle0(_ head: ListNode?) -> ListNode? {
+        
+        if head == nil || head?.next == nil {
+            return nil
+        }
+        
+        var slow = head
+        var fast = head
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+            
+            if slow === fast {
+//                print ("相遇了！！！slow:\(slow!.val)")
+                var croseNode = head
+//                print("croseNode从头跑：\(croseNode!.val)  slow从相遇点跑：\(slow!.val)")
+                while croseNode !== slow {
+                    croseNode = croseNode?.next
+                    slow = slow?.next
+//                    print ("croseNode:\(croseNode!.val)  slow:\(slow!.val)")
+                }
+//                print ("入口：croseNode:\(croseNode!.val)  slow:\(slow!.val)")
+                return slow
+            }
+        }
+        
+        return nil
+    }
+    func detectCycle(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return nil
+        }
+        
+        var hashmap = Set<ListNode>()
+        
+        var prev = head
+        while prev != nil {
+            if !hashmap.insert(prev!).inserted {
+                return prev!
+            }
+            hashmap.insert(prev!)
+            prev = prev?.next
+        }
+        
+        return nil
+    }
+}
+extension ListNode : Hashable {
+    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
+        return lhs === rhs
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(val)
+        hasher.combine(ObjectIdentifier(self))
+    }
+}
+
+//MARK: - 203. 移除链表元素 https://leetcode-cn.com/problems/remove-linked-list-elements/
 
 class Solution203 {
     
@@ -180,7 +259,7 @@ class Solution203 {
     }
 }
 
-// 83. 删除排序链表中的重复元素 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+//MARK: - 83. 删除排序链表中的重复元素 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
 class Solution83 {
     
     var linkList: LinkedList?
@@ -206,11 +285,13 @@ class Solution83 {
 
 }
 
-// 876. 链表的中间结点 https://leetcode-cn.com/problems/middle-of-the-linked-list/
+//MARK: - 876. 链表的中间结点 https://leetcode-cn.com/problems/middle-of-the-linked-list/
+//MARK: 2095. 删除链表的中间节点 https://leetcode-cn.com/problems/delete-the-middle-node-of-a-linked-list/
 class Solution876 {
     
     var linkList: LinkedList?
 
+//MARK: 找出中间节点
     /// 遍历两次
 //    func middleNode(_ head: ListNode?) -> ListNode? {
 //
@@ -243,4 +324,68 @@ class Solution876 {
         }
         return slow
     }
+//MARK: 删除中间节点
+    func deleteMiddle(_ head: ListNode?) -> ListNode? {
+        if head==nil || head?.next==nil {
+            var temp = head
+            temp=temp?.next
+            return temp
+        }
+        var slow = head
+        var fast = head
+        while fast != nil && fast?.next != nil {
+            slow=slow?.next
+            fast=fast?.next?.next
+        }
+        if slow?.next != nil {
+            slow?.val=(slow?.next!.val)!
+            slow?.next=slow?.next?.next
+        }else {
+            head?.next=nil
+            slow=slow?.next
+        }
+        
+        return head
+    }
+}
+
+//MARK: - 160. 相交链表 https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+
+class Solution160 {
+    
+    var linkList: LinkedList?
+
+    func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+        var aLength = getLinkListLength(headA)
+        var bLenght = getLinkListLength(headB)
+        var tempA = headA
+        var tempB = headB
+        while aLength != bLenght {
+            if aLength > bLenght {
+                tempA = tempA?.next
+                aLength -= 1
+            }else {
+                tempB = tempB?.next
+                bLenght -= 1
+            }
+        }
+        /// 比较两个节点是否相等，相等节点就是相交节点，如果没有，一直遍历到链表结束nil
+        while tempA !== tempB {
+            tempA = tempA?.next
+            tempB = tempB?.next
+        }
+        return tempA
+    }
+    
+    private func getLinkListLength(_ head: ListNode?) -> Int {
+        var length = 0
+        var temp = head
+        while temp != nil {
+            temp = temp?.next
+            length += 1
+        }
+        return length
+    }
+    
+    
 }
