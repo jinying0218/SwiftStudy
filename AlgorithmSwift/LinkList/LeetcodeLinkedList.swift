@@ -11,6 +11,18 @@ func LinkedListOperate() {
     
     print("链表操作")
     
+//MARK: - 21.合并两个有序链表
+    print("21.合并两个有序链表")
+//    let link1 = LinkedList.init([1,2,4])
+//    let link2 = LinkedList.init([1,3,4])
+    
+    let link1 = LinkedList.init([])
+    let link2 = LinkedList.init([1])
+    
+    let newLink = Solution21().mergeTwoLists(link1.head, link2.head)
+    LinkedList().showHeadNode(newLink)
+
+    
 // MARK: - 206.反转链表
     //let _206 = Solution206()
     //_206.linkList.head = _206.reverseList1(_206.linkList.head)
@@ -89,17 +101,17 @@ func LinkedListOperate() {
 //    _876.linkList?.showHeadNode(newHead)
     
 //MARK: 19.删除链表的倒数第 N 个结点
-    print("19.删除链表的倒数第 N 个结点")
-    let linkList = LinkedList.init([1,2,3,4,5])
+//    print("19.删除链表的倒数第 N 个结点")
+//    let linkList = LinkedList.init([1,2,3,4,5])
 //    let linkList = LinkedList.init([1])
 //    let linkList = LinkedList.init([1,2])
-    let _19 = Solution19()
-    _19.linkList = linkList
+//    let _19 = Solution19()
+//    _19.linkList = linkList
 //    let newHead = _19.removeNthFromEnd(linkList.head, 1)
 //    print(newHead?.val)
 //    linkList.showHeadNode(newHead)
-    let newHeadVal = _19.kthToLast(linkList.head, 2)
-    print(newHeadVal)
+//    let newHeadVal = _19.kthToLast(linkList.head, 2)
+//    print(newHeadVal)
 }
 
 

@@ -135,6 +135,10 @@ class LinkedList {
     }
     
     func showHeadNode(_ head: ListNode?) {
+        if head == nil {
+            print("🤬空链表")
+            return
+        }
         var node = head
         while node != nil {
             if node?.next != nil {

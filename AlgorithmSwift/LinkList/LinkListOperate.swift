@@ -49,6 +49,48 @@ class Solution19 {
     }
 }
 
+//MARK: - 21.合并两个有序链表 https://leetcode-cn.com/problems/merge-two-sorted-lists/
+class Solution21 {
+    
+    func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+        if list1 == nil {
+            return list2
+        }
+        if list2 == nil {
+            return list1
+        }
+        let dummy = ListNode()
+        var cur = dummy
+        var p1 = list1
+        var p2 = list2
+        while p1 != nil && p2 != nil {
+            if p1!.val >= p2!.val {
+                cur.next = p2
+                p2 = p2?.next
+            }else {
+                cur.next = p1
+                p1 = p1?.next
+            }
+            cur = cur.next!
+        }
+        if p1 != nil {
+            cur.next = p1
+        }
+        if p2 != nil {
+            cur.next = p2
+        }
+        return dummy.next
+    }
+}
+
+//MARK: - 23. 合并K个升序链表 https://leetcode-cn.com/problems/merge-k-sorted-lists/
+class Solution23 {
+    func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
+
+        return nil
+    }
+}
+
 //MARK: - 237. 删除链表中的节点 https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 class Solution237 {
     func deleteNode(_ node: ListNode?) {
