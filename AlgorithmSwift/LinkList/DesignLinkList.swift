@@ -137,3 +137,37 @@ class MyLinkedList {
     }
 }
 
+func testDesignLinkList() {
+
+    let mylist = MyLinkedList()
+// MARK: - 用例1
+    mylist.addAtHead(1)
+    mylist.addAtTail(3)
+    mylist.addAtIndex(1, 2)
+    let val = mylist.get(1)
+    print("get:\(val)")
+    mylist.deleteAtIndex(1)
+    let val2 = mylist.get(1)
+    print("get:\(val2)")
+
+// MARK: - 用例2
+    //mylist.addAtHead(1)
+    //mylist.addAtTail(3)
+    //mylist.addAtIndex(1, 2)
+    //print("get:\(mylist.get(1))")
+    //mylist.deleteAtIndex(0)
+    //print("get:\(mylist.get(0))")
+
+// MARK: - 用例3
+    //mylist.addAtIndex(0, 10)
+    //mylist.addAtIndex(0, 20)
+    //mylist.addAtIndex(1, 30)
+    //print("get:\(mylist.get(0))")
+
+// MARK: - 用例4
+    //mylist.addAtHead(4)
+    //print("get:\(mylist.get(1))")
+    //mylist.addAtHead(1)
+    //mylist.addAtHead(5)
+
+}

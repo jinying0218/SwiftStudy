@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - 找出链表的倒数第N个节点
+//MARK: - 面试题 02.02. 返回倒数第 k 个节点
 //MARK: - 19.删除链表的倒数第N个节点
 class Solution19 {
     
@@ -111,7 +111,7 @@ class Solution206 {
     }
 }
 
-//MARK: - 141. 环形链表 https://leetcode-cn.com/problems/linked-list-cycle/
+//MARK: - 141.环形链表 https://leetcode-cn.com/problems/linked-list-cycle/
 class Solution141 {
     
     var linkList = LinkedList()
@@ -242,16 +242,6 @@ class Solution142 {
         return nil
     }
 }
-extension ListNode : Hashable {
-    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
-        return lhs === rhs
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(val)
-        hasher.combine(ObjectIdentifier(self))
-    }
-}
 
 //MARK: - 203. 移除链表元素 https://leetcode-cn.com/problems/remove-linked-list-elements/
 
@@ -321,7 +311,6 @@ class Solution83 {
         }
         return prev
     }
-
 }
 
 //MARK: - 876. 链表的中间结点 https://leetcode-cn.com/problems/middle-of-the-linked-list/
@@ -425,6 +414,4 @@ class Solution160 {
         }
         return length
     }
-    
-    
 }

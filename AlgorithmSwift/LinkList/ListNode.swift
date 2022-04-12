@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - ListNode
+
 public class ListNode {
     public var val: Int
     public var next: ListNode?
@@ -24,6 +26,18 @@ public class ListNode {
     }
 }
 
+extension ListNode : Hashable {
+    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
+        return lhs === rhs
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(val)
+        hasher.combine(ObjectIdentifier(self))
+    }
+}
+
+//MARK: - LinkedList
 class LinkedList {
     
     var size: Int = 0
@@ -36,6 +50,8 @@ class LinkedList {
         for i in array {
             addAtTail(i)
         }
+        print("初始化链表")
+        showHeadNode(head)
     }
     
     func get(_ index: Int) -> Int {

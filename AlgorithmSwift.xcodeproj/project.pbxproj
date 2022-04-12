@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		1B5B27492800217500159E5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B27482800217500159E5A /* main.swift */; };
 		2BF3B44F2804762700974CEE /* LinkListOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44A2804762700974CEE /* LinkListOperate.swift */; };
-		2BF3B4502804762700974CEE /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44B2804762700974CEE /* LinkList.swift */; };
+		2BF3B4502804762700974CEE /* DesignLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44B2804762700974CEE /* DesignLinkList.swift */; };
 		2BF3B4512804762700974CEE /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44C2804762700974CEE /* ListNode.swift */; };
 		2BF3B4522804762700974CEE /* NSumQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44E2804762700974CEE /* NSumQuestions.swift */; };
+		2BF3B4542804778000974CEE /* LeetcodeLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B4532804778000974CEE /* LeetcodeLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,9 +31,10 @@
 		1B5B27452800217500159E5A /* AlgorithmSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5B27482800217500159E5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2BF3B44A2804762700974CEE /* LinkListOperate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkListOperate.swift; sourceTree = "<group>"; };
-		2BF3B44B2804762700974CEE /* LinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
+		2BF3B44B2804762700974CEE /* DesignLinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignLinkList.swift; sourceTree = "<group>"; };
 		2BF3B44C2804762700974CEE /* ListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		2BF3B44E2804762700974CEE /* NSumQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSumQuestions.swift; sourceTree = "<group>"; };
+		2BF3B4532804778000974CEE /* LeetcodeLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetcodeLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				2BF3B44A2804762700974CEE /* LinkListOperate.swift */,
-				2BF3B44B2804762700974CEE /* LinkList.swift */,
+				2BF3B44B2804762700974CEE /* DesignLinkList.swift */,
 				2BF3B44C2804762700974CEE /* ListNode.swift */,
+				2BF3B4532804778000974CEE /* LeetcodeLinkedList.swift */,
 			);
 			path = LinkList;
 			sourceTree = "<group>";
@@ -118,7 +121,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					1B5B27442800217500159E5A = {
 						CreatedOnToolsVersion = 13.0;
@@ -149,7 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF3B44F2804762700974CEE /* LinkListOperate.swift in Sources */,
-				2BF3B4502804762700974CEE /* LinkList.swift in Sources */,
+				2BF3B4542804778000974CEE /* LeetcodeLinkedList.swift in Sources */,
+				2BF3B4502804762700974CEE /* DesignLinkList.swift in Sources */,
 				2BF3B4522804762700974CEE /* NSumQuestions.swift in Sources */,
 				1B5B27492800217500159E5A /* main.swift in Sources */,
 				2BF3B4512804762700974CEE /* ListNode.swift in Sources */,
@@ -277,6 +281,7 @@
 		1B5B274D2800217500159E5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -286,6 +291,7 @@
 		1B5B274E2800217500159E5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
