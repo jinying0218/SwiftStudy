@@ -7,6 +7,48 @@
 
 import Foundation
 
+//MARK: - 找出链表的倒数第N个节点
+//MARK: - 19.删除链表的倒数第N个节点
+class Solution19 {
+    
+    var linkList = LinkedList()
+
+    // 返回该节点的值
+    func kthToLast(_ head: ListNode?, _ k: Int) -> Int {
+        var slow = head
+        var fast = head
+        var count = 0
+        while fast != nil {
+            if count >= k {
+                slow = slow?.next
+            }
+            fast = fast?.next
+            count += 1
+        }
+        return slow!.val
+    }
+    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+
+        let dummy = ListNode.init()
+        dummy.next = head
+        var prev = dummy
+        var fast = head
+        var count = 0
+        
+        while fast != nil {
+            if count >= n {
+                prev = prev.next!
+            }
+            fast = fast?.next
+            count += 1
+        }
+        
+        prev.next = prev.next?.next
+        
+        return dummy.next
+    }
+}
+
 //MARK: - 237. 删除链表中的节点 https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 class Solution237 {
     func deleteNode(_ node: ListNode?) {
