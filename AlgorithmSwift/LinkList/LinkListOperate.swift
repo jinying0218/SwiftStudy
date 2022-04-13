@@ -105,17 +105,7 @@ class Solution237 {
 class Solution206 {
     
     var linkList = LinkedList()
-    
-    init() {
-        linkList.addAtHead(1)
-        linkList.addAtTail(2)
-        linkList.addAtTail(3)
-        linkList.addAtTail(4)
-        linkList.addAtTail(5)
-    }
-    
     /// 反转链表前N个节点
-    
     var successor : ListNode?
     
     func reverseN(_ head: ListNode?, _ n: Int) -> ListNode? {
