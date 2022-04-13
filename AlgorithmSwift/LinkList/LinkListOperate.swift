@@ -101,6 +101,7 @@ class Solution237 {
 
 
 //MARK: - 206. 反转链表 https://leetcode-cn.com/problems/reverse-linked-list/
+//MARK: - 92. 反转链表 II https://leetcode-cn.com/problems/reverse-linked-list-ii/
 class Solution206 {
     
     var linkList = LinkedList()
@@ -111,6 +112,34 @@ class Solution206 {
         linkList.addAtTail(3)
         linkList.addAtTail(4)
         linkList.addAtTail(5)
+    }
+    
+    /// 反转链表前N个节点
+    
+    var successor : ListNode?
+    
+    func reverseN(_ head: ListNode?, _ n: Int) -> ListNode? {
+        
+//        print("n: \(n) head:\(head?.val)")
+        if n == 1 {
+            successor = head?.next
+            return head ?? nil
+        }
+        let newHead = reverseN(head?.next, n - 1)
+//        print("newHead:\(newHead?.val) head:\(head?.val) successor:\(successor?.val)")
+        head?.next?.next = head
+        head?.next = successor
+        
+        return newHead
+    }
+    /// 反转从位置 left 到 right 的节点
+    func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
+        if left == 1 {
+            return reverseN(head, right)
+        }
+        head?.next = reverseBetween(head?.next, left - 1, right - 1)
+
+        return head
     }
 
     /// 递归

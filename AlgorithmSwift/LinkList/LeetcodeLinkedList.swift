@@ -12,22 +12,31 @@ func LinkedListOperate() {
     print("链表操作")
     
 //MARK: - 21.合并两个有序链表
-    print("21.合并两个有序链表")
+//    print("21.合并两个有序链表")
 //    let link1 = LinkedList.init([1,2,4])
 //    let link2 = LinkedList.init([1,3,4])
     
-    let link1 = LinkedList.init([])
-    let link2 = LinkedList.init([1])
-    
-    let newLink = Solution21().mergeTwoLists(link1.head, link2.head)
-    LinkedList().showHeadNode(newLink)
+//    let link1 = LinkedList.init([])
+//    let link2 = LinkedList.init([1])
+//
+//    let newLink = Solution21().mergeTwoLists(link1.head, link2.head)
+//    LinkedList().showHeadNode(newLink)
 
     
 // MARK: - 206.反转链表
     //let _206 = Solution206()
     //_206.linkList.head = _206.reverseList1(_206.linkList.head)
     //_206.linkList.showAllNode()
+    
+// MARK: 反转前N个节点
+    
+//    let list = LinkedList.init([1,2,3,4,5,6])
+    let list = LinkedList.init([5])
 
+//    let newHead = Solution206().reverseN(list.head,3)
+    
+    let newHead = Solution206().reverseBetween( list.head, 1, 1)
+    LinkedList.showHeadNode(newHead)
 // MARK: - 203.移除链表元素
     //let _203 = Solution203()
     /// 用例1
