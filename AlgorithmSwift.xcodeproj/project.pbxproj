@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B5B27492800217500159E5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B27482800217500159E5A /* main.swift */; };
+		1BFF22432806C8BE0079F6F4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF22422806C8BE0079F6F4 /* Stack.swift */; };
 		2BF3B44F2804762700974CEE /* LinkListOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44A2804762700974CEE /* LinkListOperate.swift */; };
 		2BF3B4502804762700974CEE /* DesignLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44B2804762700974CEE /* DesignLinkList.swift */; };
 		2BF3B4512804762700974CEE /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3B44C2804762700974CEE /* ListNode.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		1B5B27452800217500159E5A /* AlgorithmSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5B27482800217500159E5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1BFF22422806C8BE0079F6F4 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		2BF3B44A2804762700974CEE /* LinkListOperate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkListOperate.swift; sourceTree = "<group>"; };
 		2BF3B44B2804762700974CEE /* DesignLinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignLinkList.swift; sourceTree = "<group>"; };
 		2BF3B44C2804762700974CEE /* ListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
@@ -67,11 +69,36 @@
 		1B5B27472800217500159E5A /* AlgorithmSwift */ = {
 			isa = PBXGroup;
 			children = (
+				1BFF22452806C9BE0079F6F4 /* BinaryTree */,
+				1BFF22462806C9BE0079F6F4 /* Queue */,
+				1BFF22442806C8CB0079F6F4 /* Stack */,
 				2BF3B4492804762700974CEE /* LinkList */,
 				2BF3B44D2804762700974CEE /* NSum */,
 				1B5B27482800217500159E5A /* main.swift */,
 			);
 			path = AlgorithmSwift;
+			sourceTree = "<group>";
+		};
+		1BFF22442806C8CB0079F6F4 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF22422806C8BE0079F6F4 /* Stack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		1BFF22452806C9BE0079F6F4 /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		1BFF22462806C9BE0079F6F4 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 		2BF3B4492804762700974CEE /* LinkList */ = {
@@ -153,6 +180,7 @@
 			files = (
 				2BF3B44F2804762700974CEE /* LinkListOperate.swift in Sources */,
 				2BF3B4542804778000974CEE /* LeetcodeLinkedList.swift in Sources */,
+				1BFF22432806C8BE0079F6F4 /* Stack.swift in Sources */,
 				2BF3B4502804762700974CEE /* DesignLinkList.swift in Sources */,
 				2BF3B4522804762700974CEE /* NSumQuestions.swift in Sources */,
 				1B5B27492800217500159E5A /* main.swift in Sources */,
