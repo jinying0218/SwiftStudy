@@ -338,11 +338,10 @@ class Solution203 {
 //            print("prev: \(prev.val) temp: \(temp?.val)")
             if temp?.val == val {
                 prev.next = temp?.next
-                temp = temp?.next
             }else {
                 prev = temp!
-                temp = temp?.next
             }
+            temp = temp?.next
         }
         
         return dummyNode.next
@@ -474,5 +473,34 @@ class Solution160 {
             length += 1
         }
         return length
+    }
+}
+
+//MARK: - 328. 奇偶链表 https://leetcode-cn.com/problems/odd-even-linked-list/
+class Solution328 {
+    func oddEvenList(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        /// 奇数头
+        let oddHead = head
+        /// 偶数头
+        let evenHead = head?.next
+        
+        /// 当前奇数节点
+        var curOdd = oddHead
+        /// 当前偶数节点
+        var curEven = evenHead
+        
+        while curEven != nil && curEven?.next != nil {
+            curOdd?.next = curOdd?.next?.next
+            curEven?.next = curEven?.next?.next
+            
+            curOdd = curOdd?.next
+            curEven = curEven?.next
+        }
+        
+        curOdd?.next = evenHead
+        return oddHead
     }
 }

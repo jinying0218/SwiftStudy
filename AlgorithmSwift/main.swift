@@ -50,10 +50,10 @@ swapeStringValue(&astring, &bstring)
  */
 
 //MARK: - 链表操作
-//LinkedListOperate()
+LinkedListOperate()
 
 //MARK: - NSum问题
 //NSumQuestions()
 
 //MARK: - 栈相关
-StackOperate()
+//StackOperate()

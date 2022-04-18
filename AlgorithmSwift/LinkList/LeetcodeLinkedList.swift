@@ -31,12 +31,12 @@ func LinkedListOperate() {
 // MARK: 反转前N个节点
     
 //    let list = LinkedList.init([1,2,3,4,5,6])
-    let list = LinkedList.init([5])
+//    let list = LinkedList.init([5])
 
 //    let newHead = Solution206().reverseN(list.head,3)
     
-    let newHead = Solution206().reverseBetween( list.head, 1, 1)
-    LinkedList.showHeadNode(newHead)
+//    let newHead = Solution206().reverseBetween( list.head, 1, 1)
+//    LinkedList.showHeadNode(newHead)
 // MARK: - 203.移除链表元素
     //let _203 = Solution203()
     /// 用例1
@@ -121,6 +121,13 @@ func LinkedListOperate() {
 //    linkList.showHeadNode(newHead)
 //    let newHeadVal = _19.kthToLast(linkList.head, 2)
 //    print(newHeadVal)
+    
+    //MARK: - 328. 奇偶链表
+    print("328. 奇偶链表")
+    
+    let linkList = LinkedList.init([1,2,3,4,5])
+    let newHead = Solution328().oddEvenList(linkList.head)
+    LinkedList.showHeadNode(newHead)
 }
 
 
