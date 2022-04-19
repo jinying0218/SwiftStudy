@@ -27,9 +27,10 @@ func LinkedListOperate() {
     //let _206 = Solution206()
     //_206.linkList.head = _206.reverseList1(_206.linkList.head)
     //_206.linkList.showAllNode()
-    let link = LinkedList.init([1,2,3,4,5])
-    let newHead = Solution206().reverseList2(link.head)
-    LinkedList.showHeadNode(newHead)
+    
+//    let link = LinkedList.init([1,2,3,4,5])
+//    let newHead = Solution206().reverseList2(link.head)
+//    LinkedList.showHeadNode(newHead)
     
 // MARK: 反转前N个节点
     
@@ -55,6 +56,11 @@ func LinkedListOperate() {
     //_203.linkList?.showAllNode()
     //_203.removeElements(_203.linkList?.head, 2)
     //_203.linkList?.showAllNode()
+
+//MARK: - 234. 回文链表
+    let linkedList = LinkedList.init([1,2,3,2,1])
+//    let linkedList = LinkedList.init([1,2,3,3,2,1])
+    print(Solution234().isPalindrome(linkedList.head))
 
 
 // MARK: - 83.删除排序链表中的重复元素

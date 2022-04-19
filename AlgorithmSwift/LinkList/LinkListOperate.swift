@@ -371,6 +371,44 @@ class Solution203 {
     }
 }
 
+//MARK: - 234. 回文链表 https://leetcode-cn.com/problems/palindrome-linked-list/
+class Solution234 {
+    func isPalindrome(_ head: ListNode?) -> Bool {
+        
+        var slow = head
+        var fast = head
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        
+        var reversedSlow = reverseLinkedList(slow)
+        var right = reversedSlow
+        fast = head
+        while right != nil {
+            if right?.val != fast?.val {
+                return false
+            }
+            right = right?.next
+            fast = fast?.next
+        }
+        
+        return true
+    }
+    
+    func reverseLinkedList(_ head: ListNode?) ->ListNode? {
+        var cur = head
+        var newHead: ListNode?
+        while cur != nil {
+            let temp = cur?.next
+            cur?.next = newHead
+            newHead = cur
+            cur = temp
+        }
+        return newHead
+    }
+}
+
 //MARK: - 83. 删除排序链表中的重复元素 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
 class Solution83 {
     
