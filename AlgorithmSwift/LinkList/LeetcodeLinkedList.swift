@@ -27,6 +27,9 @@ func LinkedListOperate() {
     //let _206 = Solution206()
     //_206.linkList.head = _206.reverseList1(_206.linkList.head)
     //_206.linkList.showAllNode()
+    let link = LinkedList.init([1,2,3,4,5])
+    let newHead = Solution206().reverseList2(link.head)
+    LinkedList.showHeadNode(newHead)
     
 // MARK: 反转前N个节点
     
@@ -123,11 +126,11 @@ func LinkedListOperate() {
 //    print(newHeadVal)
     
     //MARK: - 328. 奇偶链表
-    print("328. 奇偶链表")
+//    print("328. 奇偶链表")
     
-    let linkList = LinkedList.init([1,2,3,4,5])
-    let newHead = Solution328().oddEvenList(linkList.head)
-    LinkedList.showHeadNode(newHead)
+//    let linkList = LinkedList.init([1,2,3,4,5])
+//    let newHead = Solution328().oddEvenList(linkList.head)
+//    LinkedList.showHeadNode(newHead)
 }
 
 

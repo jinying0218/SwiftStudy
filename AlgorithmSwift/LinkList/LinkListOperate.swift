@@ -155,19 +155,42 @@ class Solution206 {
     }
     
     func reverseList1(_ head: ListNode?) -> ListNode? {
-                
         var newHead: ListNode?
-        
-        var tempHead = head
+        var cur = head
+        while cur != nil {
+            /// 保存原链表下一个节点
+            let temp = cur?.next
+            /// 原链表指向新链表头部
+            cur?.next = newHead
+            newHead = cur!
+            /// 原链表头节点等于下一个节点
+            cur = temp
+        }
+        return newHead
+    }
+    /// 栈
+    func reverseList2(_ head: ListNode?) -> ListNode? {
+        var stack:[ListNode] = []
+        var cur = head
 
-        while tempHead != nil {
-            let temp = tempHead?.next
-            tempHead?.next = newHead
-            newHead = tempHead!
-            tempHead = temp
+        while cur !=  nil {
+            stack.append(cur!)
+            cur = cur?.next
         }
         
+        if stack.isEmpty {
+            return nil
+        }
         
+        var oneNode = stack.popLast()
+        let newHead = oneNode
+        
+        while !stack.isEmpty {
+            let node = stack.popLast()
+            oneNode?.next = node
+            oneNode = node
+        }
+        oneNode?.next = nil
         return newHead
     }
 }
