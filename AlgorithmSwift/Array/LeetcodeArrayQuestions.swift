@@ -7,6 +7,34 @@
 
 import Foundation
 
+//MARK: - 27.移除元素 https://leetcode-cn.com/problems/remove-element/
+class Solution27 {
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+
+        var left = 0
+        var right = nums.count - 1
+        
+        var string = ""
+        
+        while left <= right {
+            if nums[left] == val {
+                let temp = nums[left]
+                nums[left] = nums[right]
+                nums[right] = temp
+                right -= 1
+
+            }else {
+                left += 1
+                string.append("\t")
+                print("\(string)\(nums)")
+            }
+        }
+        
+        return left
+    }
+}
+
+
 // MARK: - 75. 颜色分类  https://leetcode-cn.com/problems/sort-colors/
 class Solution75 {
 //nums = [2,0,2,1,1,0]
@@ -64,12 +92,18 @@ class Solution88 {
 
 func ArrayQuestions() {
     
+    //MARK: - 27.移除元素
+//    var nums = [3,2,2,3]
+    var nums = [0,1,2,2,3,0,4,2]
+    let count = Solution27().removeElement(&nums, 2)
+    print(count)
+    
     // MARK: - 75. 颜色分类
 //    var nums = [2,0,2,1,1,0]
-    var nums = [2,0,1]
-    print(nums)
-    Solution75().sortColors(&nums)
-    print(nums)
+//    var nums = [2,0,1]
+//    print(nums)
+//    Solution75().sortColors(&nums)
+//    print(nums)
     
     // MARK: - 88. 合并两个有序数组
 //    var nums1 = [1,2,3,0,0,0]
