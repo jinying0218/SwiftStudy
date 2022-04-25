@@ -382,7 +382,7 @@ class Solution234 {
             fast = fast?.next?.next
         }
         
-        var reversedSlow = reverseLinkedList(slow)
+        let reversedSlow = reverseLinkedList(slow)
         var right = reversedSlow
         fast = head
         while right != nil {

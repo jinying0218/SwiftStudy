@@ -7,6 +7,65 @@
 
 import Foundation
 
+//MARK: - 面试题 16.16. 部分排序 https://leetcode-cn.com/problems/sub-sort-lcci/
+class Solution16_16 {
+    func subSort0(_ array: [Int]) -> [Int] {
+        var maxValue = array.first
+        var rightIndex = -1
+        var i = 1
+        while i < array.count {
+            if array[i] > maxValue! {
+                maxValue = array[i]
+            }
+            if array[i] < maxValue! {
+                rightIndex = i
+            }
+            i += 1
+        }
+        
+        var leftIndex = -1
+        var minValue = array.last
+        var j = array.count - 2
+        while j >= 0 {
+            if array[j] < minValue! {
+                minValue = array[j]
+            }
+            if array[j] > minValue! {
+                leftIndex = j
+            }
+            j -= 1
+        }
+        
+        return [leftIndex,rightIndex]
+    }
+    func subSort(_ array: [Int]) -> [Int] {
+
+        var maxValue = array.first
+        var minValue = array.last
+        var leftIndex = -1
+        var rightIndex = -1
+
+        for i in 0..<array.count {
+            if array[i] > maxValue! {
+                maxValue = array[i]
+            }
+            if array[i] < maxValue! {
+                rightIndex = i
+            }
+            
+            let j = array.count - 1 - i
+            if array[j] < minValue! {
+                minValue = array[j]
+            }
+            if array[j] > minValue! {
+                leftIndex = j
+            }
+        }
+        
+        return [leftIndex,rightIndex]
+    }
+}
+
 //MARK: - 27.移除元素 https://leetcode-cn.com/problems/remove-element/
 class Solution27 {
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
@@ -92,12 +151,17 @@ class Solution88 {
 
 func ArrayQuestions() {
     
+    //MARK: - 16.16 部分排序
+//    let nums = [1,2,4,7,10,11,7,12,6,7,16,18,19]
+    let nums = [1,2]
+    print (Solution16_16().subSort(nums))
+    
     //MARK: - 27.移除元素
 //    var nums = [3,2,2,3]
-    var nums = [0,1,2,2,3,0,4,2]
-    let count = Solution27().removeElement(&nums, 2)
-    print(count)
-    
+//    var nums = [0,1,2,2,3,0,4,2]
+//    let count = Solution27().removeElement(&nums, 2)
+//    print(count)
+
     // MARK: - 75. 颜色分类
 //    var nums = [2,0,2,1,1,0]
 //    var nums = [2,0,1]
