@@ -149,12 +149,31 @@ class Solution88 {
     }
 }
 
+// MARK: - 03. 区域和检索 - 数组不可变 https://leetcode-cn.com/problems/range-sum-query-immutable/
+class NumArray_03 {
+
+    var preSums: [Int] = []
+    
+    init(_ nums: [Int]) {
+        print("nums:\(nums)")
+        preSums.append(0)
+        for i in 1...nums.count {
+            preSums.append(preSums[i - 1] + nums[i - 1])
+        }
+        print("preSums:\(preSums)")
+    }
+    
+    func sumRange(_ left: Int, _ right: Int) -> Int {
+        return preSums[right + 1] - preSums[left]
+    }
+}
+
 func ArrayQuestions() {
     
     //MARK: - 16.16 部分排序
 //    let nums = [1,2,4,7,10,11,7,12,6,7,16,18,19]
-    let nums = [1,2]
-    print (Solution16_16().subSort(nums))
+//    let nums = [1,2]
+//    print (Solution16_16().subSort(nums))
     
     //MARK: - 27.移除元素
 //    var nums = [3,2,2,3]
@@ -176,5 +195,11 @@ func ArrayQuestions() {
 //    let n = 3
 //
 //    Solution88().merge( &nums1, m, nums2, n)
+    
+    // MARK: - 03
+    let obj = NumArray_03([-2, 0, 3, -5, 2, -1])
+    let ret_1: Int = obj.sumRange(0,5)
+    print(ret_1)
+    
     
 }
