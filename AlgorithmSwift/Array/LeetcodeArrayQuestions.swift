@@ -167,6 +167,50 @@ class NumArray_03 {
         return preSums[right + 1] - preSums[left]
     }
 }
+// MARK: - 304. 二维区域和检索 - 矩阵不可变 https://leetcode-cn.com/problems/range-sum-query-2d-immutable/
+class NumMatrix_304 {
+// 定义：preSum[i][j] 记录 matrix 中子矩阵 [0, 0, i-1, j-1] 的元素和
+    var preSum: [[Int]]?
+    var subArray: [Int]?
+    init(_ matrix: [[Int]]) {
+        let m = matrix.count
+        let n = matrix[0].count
+        subArray = Array.init(repeating: 0, count: n + 1)
+        preSum = Array.init(repeating: subArray!, count: m + 1)
+        for i in 0..<m {
+            for j in 0..<n {
+                preSum![i+1][j+1] = preSum![i][j + 1] + preSum![i + 1][j] + matrix[i][j] - preSum![i][j]
+                print("\t\(matrix[i][j])",terminator:"")
+            }
+            print("\n")
+        }
+        print("~~~")
+        for i in 0..<preSum!.count {
+            for j in 0..<preSum![0].count {
+                print("\t\(preSum![i][j])",terminator:"")
+            }
+            print("\n")
+        }
+                
+        print(matrix)
+    }
+    
+    func sumRegion(_ row1: Int, _ col1: Int, _ row2: Int, _ col2: Int) -> Int {
+        let red = preSum![row2 + 1][col2 + 1]
+        let blue = preSum![row1][col2 + 1]
+        let yellow = preSum![row2 + 1][col1]
+        let pink = preSum![row1][col1]
+        print("red:\(red) blue:\(blue) yellow:\(yellow) pink:\(pink) ")
+        return red - blue - yellow + pink
+//        return preSum![row2 + 1][col2 + 1] - preSum![row1][col2 + 1] - preSum![row2 + 1][col1] + preSum![row1][col1]
+    }
+}
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * let obj = NumMatrix(matrix)
+ * let ret_1: Int = obj.sumRegion(row1, col1, row2, col2)
+ */
 
 func ArrayQuestions() {
     
@@ -196,10 +240,16 @@ func ArrayQuestions() {
 //
 //    Solution88().merge( &nums1, m, nums2, n)
     
-    // MARK: - 03
-    let obj = NumArray_03([-2, 0, 3, -5, 2, -1])
-    let ret_1: Int = obj.sumRange(0,5)
-    print(ret_1)
+    // MARK: - 03.区域和检索 - 数组不可变
+//    let obj = NumArray_03([-2, 0, 3, -5, 2, -1])
+//    let ret_1: Int = obj.sumRange(0,5)
+//    print(ret_1)
     
-    
+    // MARK: - 304. 二维区域和检索 - 矩阵不可变
+    let obj = NumMatrix_304([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]])
+    let ret_1: Int = obj.sumRegion(2,1,4,3)
+    let ret_2: Int = obj.sumRegion(1, 1, 2, 2)
+    let ret_3: Int = obj.sumRegion(1, 2, 2, 4)
+
+    print("\(ret_1)\n\(ret_2)\n\(ret_3)")
 }
