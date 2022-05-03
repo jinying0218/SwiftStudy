@@ -206,6 +206,44 @@ class NumMatrix_304 {
     }
 }
 
+// MARK: - 560. 和为 K 的子数组 https://leetcode-cn.com/problems/subarray-sum-equals-k/
+class Solution_560 {
+    func subarraySum0(_ nums: [Int], _ k: Int) -> Int {
+            var preSum = Array.init(repeating: 0, count: nums.count + 1)
+            for i in 0..<nums.count {
+                preSum[i+1] = preSum[i] + nums[i]
+            }
+            print("preSum:\(preSum)")
+            var count = 0
+            for i in 0..<preSum.count {
+                for j in 0..<i {
+                    if preSum[i] - preSum[j] == k {
+                        count += 1
+                    }
+                }
+            }
+
+            return count
+    }
+    func subarraySum(_ nums: [Int], _ k: Int) -> Int {
+        var count = 0
+        var preSum:[Int:Int] = [:]
+        var sum = 0
+        for i in 0..<nums.count {
+            sum += nums[i]
+            if sum == k {
+                count += 1
+            }
+            if let minus = preSum[sum - k] {
+                count += minus
+            }
+            preSum[sum,default: 0] += 1
+        }
+
+        return count
+    }
+}
+
 /**
  * Your NumMatrix object will be instantiated and called as such:
  * let obj = NumMatrix(matrix)
@@ -246,10 +284,18 @@ func ArrayQuestions() {
 //    print(ret_1)
     
     // MARK: - 304. 二维区域和检索 - 矩阵不可变
-    let obj = NumMatrix_304([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]])
-    let ret_1: Int = obj.sumRegion(2,1,4,3)
-    let ret_2: Int = obj.sumRegion(1, 1, 2, 2)
-    let ret_3: Int = obj.sumRegion(1, 2, 2, 4)
+//    let obj = NumMatrix_304([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]])
+//    let ret_1: Int = obj.sumRegion(2,1,4,3)
+//    let ret_2: Int = obj.sumRegion(1, 1, 2, 2)
+//    let ret_3: Int = obj.sumRegion(1, 2, 2, 4)
+//
+//    print("\(ret_1)\n\(ret_2)\n\(ret_3)")
+    
+    // MARK: - 560. 和为 K 的子数组
+//    let nums1 = [1,1,1]
+//    let ret_1 = Solution_560().subarraySum(nums1, 2)
+    let nums2 = [0,0,0,0,0,0,0,0,0,0]
+    let ret_2 = Solution_560().subarraySum(nums2, 0)
+    print("\(ret_2)")
 
-    print("\(ret_1)\n\(ret_2)\n\(ret_3)")
 }
