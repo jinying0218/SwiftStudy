@@ -15,10 +15,11 @@ func LinkedListOperate() {
 //    let link2 = LinkedList.init([5,6,4])
 //    let link1 = LinkedList.init([0])
 //    let link2 = LinkedList.init([0])
-    let link1 = LinkedList.init([9,9,9,9,9,9,9])
-    let link2 = LinkedList.init([9,9,9,9])
-    let result1 = Solution_2().addTwoNumbers(link1.head, link2.head)
-    LinkedList().showHeadNode(result1)
+    
+//    let link1 = LinkedList.init([9,9,9,9,9,9,9])
+//    let link2 = LinkedList.init([9,9,9,9])
+//    let result1 = Solution_2().addTwoNumbers(link1.head, link2.head)
+//    LinkedList().showHeadNode(result1)
     
 //MARK: - 21.合并两个有序链表
 //    print("21.合并两个有序链表")
@@ -31,6 +32,11 @@ func LinkedListOperate() {
 //    let newLink = Solution21().mergeTwoLists(link1.head, link2.head)
 //    LinkedList().showHeadNode(newLink)
 
+    // MARK: - 160 相交链表
+//    let linkA = LinkedList.init([4,1,8,4,5])
+//    let linkB = LinkedList.init([5,6,1,8,4,5])
+//    let result1 = Solution160().getIntersectionNode(linkA.head, linkB.head)
+//    LinkedList().showHeadNode(result1)
     
 // MARK: - 206.反转链表
     //let _206 = Solution206()

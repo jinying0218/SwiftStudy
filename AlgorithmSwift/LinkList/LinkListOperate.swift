@@ -545,8 +545,23 @@ class Solution876 {
 class Solution160 {
     
     var linkList: LinkedList?
-
+    
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+        if headA == nil || headB == nil {
+            return nil
+        }
+        var curA = headA
+        var curB = headB
+        
+        while curA !== curB {
+            curA = (curA == nil) ? headB : curA?.next
+            curB = curB == nil ? headA : curB?.next
+        }
+        
+        return curA
+    }
+
+    func getIntersectionNode0(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         var aLength = getLinkListLength(headA)
         var bLenght = getLinkListLength(headB)
         var tempA = headA
