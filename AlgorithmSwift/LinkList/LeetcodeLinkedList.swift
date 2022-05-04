@@ -31,7 +31,12 @@ func LinkedListOperate() {
 //
 //    let newLink = Solution21().mergeTwoLists(link1.head, link2.head)
 //    LinkedList().showHeadNode(newLink)
-
+    
+    //MARK: - 86. 分隔链表
+    let linkA = LinkedList.init([1,4,3,2,5,2])
+    let reuslt1 = Solution_86().partition(linkA.head, 3)
+    print(reuslt1)
+    
     // MARK: - 160 相交链表
 //    let linkA = LinkedList.init([4,1,8,4,5])
 //    let linkB = LinkedList.init([5,6,1,8,4,5])

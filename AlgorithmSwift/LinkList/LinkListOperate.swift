@@ -540,6 +540,33 @@ class Solution876 {
     }
 }
 
+//MARK: - 86. 分隔链表 https://leetcode-cn.com/problems/partition-list/
+class Solution_86 {
+    func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
+        
+        var temp = head
+        let leftHead = ListNode.init()
+        var curLeft = leftHead
+        let rightHead = ListNode.init()
+        var curRight = rightHead
+
+        while temp != nil {
+            if temp!.val < x {
+                curLeft.next = temp
+                curLeft = curLeft.next!
+            }else {
+                curRight.next = temp
+                curRight = curRight.next!
+            }
+            temp = temp?.next
+        }
+        curRight.next = nil
+        curLeft.next = rightHead.next
+        
+        return leftHead.next
+    }
+}
+
 //MARK: - 160. 相交链表 https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
 
 class Solution160 {
