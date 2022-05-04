@@ -7,6 +7,48 @@
 
 import Foundation
 
+//MARK: - 2. 两数相加 https://leetcode-cn.com/problems/add-two-numbers/
+class Solution_2 {
+    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        if l1 == nil {
+            return l2
+        }
+        if l2 == nil {
+            return l1
+        }
+        var cur1 = l1
+        var cur2 = l2
+        
+        let dummy = ListNode.init()
+        var last = dummy
+        var carry = 0
+        while cur1 != nil || cur2 != nil {
+            var v1 = 0
+            var v2 = 0
+            if cur1 != nil {
+                v1 = cur1!.val
+                cur1 = cur1?.next
+            }
+            if cur2 != nil {
+                v2 = cur2!.val
+                cur2 = cur2?.next
+            }
+            let sum = v1 + v2 + carry
+            carry = sum/10
+            last.next = ListNode.init(sum%10)
+            last = last.next!
+        }
+        
+        if carry > 0 {
+            last.next = ListNode.init(carry)
+            last = last.next!
+        }
+        
+        return dummy.next
+    }
+}
+    
+
 //MARK: - 面试题 02.02. 返回倒数第 k 个节点
 //MARK: - 19.删除链表的倒数第N个节点
 class Solution19 {

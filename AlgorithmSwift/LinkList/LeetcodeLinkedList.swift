@@ -10,6 +10,15 @@ import Foundation
 func LinkedListOperate() {
     
     print("链表操作")
+//    MARK: - 2. 两数相加
+//    let link1 = LinkedList.init([2,4,3])
+//    let link2 = LinkedList.init([5,6,4])
+//    let link1 = LinkedList.init([0])
+//    let link2 = LinkedList.init([0])
+    let link1 = LinkedList.init([9,9,9,9,9,9,9])
+    let link2 = LinkedList.init([9,9,9,9])
+    let result1 = Solution_2().addTwoNumbers(link1.head, link2.head)
+    LinkedList().showHeadNode(result1)
     
 //MARK: - 21.合并两个有序链表
 //    print("21.合并两个有序链表")
@@ -58,9 +67,9 @@ func LinkedListOperate() {
     //_203.linkList?.showAllNode()
 
 //MARK: - 234. 回文链表
-    let linkedList = LinkedList.init([1,2,3,2,1])
+//    let linkedList = LinkedList.init([1,2,3,2,1])
 //    let linkedList = LinkedList.init([1,2,3,3,2,1])
-    print(Solution234().isPalindrome(linkedList.head))
+//    print(Solution234().isPalindrome(linkedList.head))
 
 
 // MARK: - 83.删除排序链表中的重复元素
