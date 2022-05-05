@@ -56,8 +56,12 @@ swapeStringValue(&astring, &bstring)
 //NSumQuestions()
 
 //MARK: - 栈相关
-StackOperate()
+//StackOperate()
 
 //MARK: - 数组相关
 
 //ArrayQuestions()
+
+//MARK: - 队列相关
+    
+QueueOperate()

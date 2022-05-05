@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B5B1BF22823DDDC00FCDD74 /* QueueOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B1BF12823DDDC00FCDD74 /* QueueOperate.swift */; };
 		1B5B27492800217500159E5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B27482800217500159E5A /* main.swift */; };
 		1B99D53528140582003E25BB /* LeetcodeArrayQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B99D53428140582003E25BB /* LeetcodeArrayQuestions.swift */; };
 		1BFF22432806C8BE0079F6F4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF22422806C8BE0079F6F4 /* Stack.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B5B1BF12823DDDC00FCDD74 /* QueueOperate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueOperate.swift; sourceTree = "<group>"; };
 		1B5B27452800217500159E5A /* AlgorithmSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5B27482800217500159E5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1B99D53428140582003E25BB /* LeetcodeArrayQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetcodeArrayQuestions.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		1BFF22462806C9BE0079F6F4 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				1B5B1BF12823DDDC00FCDD74 /* QueueOperate.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				2BF3B44F2804762700974CEE /* LinkListOperate.swift in Sources */,
 				2BF3B4542804778000974CEE /* LeetcodeLinkedList.swift in Sources */,
 				1BFF22432806C8BE0079F6F4 /* Stack.swift in Sources */,
+				1B5B1BF22823DDDC00FCDD74 /* QueueOperate.swift in Sources */,
 				2BF3B4502804762700974CEE /* DesignLinkList.swift in Sources */,
 				2BF3B4522804762700974CEE /* NSumQuestions.swift in Sources */,
 				1B5B27492800217500159E5A /* main.swift in Sources */,
