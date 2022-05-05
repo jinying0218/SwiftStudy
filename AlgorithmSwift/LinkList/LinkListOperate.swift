@@ -415,6 +415,26 @@ class Solution203 {
 
 //MARK: - 234. 回文链表 https://leetcode-cn.com/problems/palindrome-linked-list/
 class Solution234 {
+    /// 加入数组，比较第一个元素跟最后一个元素
+    func isPalindrome1(_ head: ListNode?) -> Bool {
+        var stack = [Int]()
+        var head = head
+        while let current = head {
+            stack.append(current.val)
+            head = current.next
+        }
+                
+        var start = 0, end = stack.count - 1
+        while start < end {
+            if stack[start] != stack[end] {
+                return false
+            }
+            start += 1
+            end -= 1
+        }
+        return true
+    }
+    
     func isPalindrome(_ head: ListNode?) -> Bool {
         
         var slow = head
