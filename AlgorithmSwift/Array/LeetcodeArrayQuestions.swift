@@ -244,11 +244,54 @@ class Solution_560 {
     }
 }
 
-/**
- * Your NumMatrix object will be instantiated and called as such:
- * let obj = NumMatrix(matrix)
- * let ret_1: Int = obj.sumRegion(row1, col1, row2, col2)
- */
+// MARK: - 1109. 航班预订统计 https://leetcode.cn/problems/corporate-flight-bookings/
+class Solution_1109 {
+    // MARK - 差分数组
+    class DiffArray {
+        var diff :[Int]
+        
+        init(_ nums: [Int]) {
+            diff = Array.init(repeating: 0, count: nums.count)
+            diff[0] = nums[0]
+            for i in 1..<nums.count {
+                diff[i] = nums[i] - nums[i - 1]
+            }
+        }
+        
+        func increment(i: Int, j: Int, val: Int) {
+            diff[i] += val
+            guard j+1<diff.count else {
+                return
+            }
+            diff[j+1] -= val
+        }
+        
+        func resultNums() -> [Int] {
+            var res: [Int] = [Int].init(repeating: 0, count: diff.count)
+            res[0] = diff[0]
+            for i in 1..<diff.count {
+                res[i] = res[i - 1] + diff[i]
+            }
+            return res
+        }
+    }
+    
+    func corpFlightBookings(_ bookings: [[Int]], _ n: Int) -> [Int] {
+        let nums:[Int] = [Int].init(repeating: 0, count: n)
+        
+        let diff = DiffArray.init(nums)
+
+        for (_ , book) in bookings.enumerated() {
+            let i = book[0] - 1
+            let j = book[1] - 1
+            let val = book[2]
+            
+            diff.increment(i: i, j: j, val: val)
+        }
+        
+        return diff.resultNums()
+    }
+}
 
 func ArrayQuestions() {
     
@@ -294,8 +337,15 @@ func ArrayQuestions() {
     // MARK: - 560. 和为 K 的子数组
 //    let nums1 = [1,1,1]
 //    let ret_1 = Solution_560().subarraySum(nums1, 2)
-    let nums2 = [0,0,0,0,0,0,0,0,0,0]
-    let ret_2 = Solution_560().subarraySum(nums2, 0)
-    print("\(ret_2)")
+//    let nums2 = [0,0,0,0,0,0,0,0,0,0]
+//    let ret_2 = Solution_560().subarraySum(nums2, 0)
+//    print("\(ret_2)")
+    
+    // MARK: - 1109. 航班预订统计
+    let bookings = [[1,2,10],[2,3,20],[2,5,25]]
+    let n = 5
+    let res_1 = Solution_1109().corpFlightBookings(bookings, n)
+    
+    print(res_1)
 
 }
