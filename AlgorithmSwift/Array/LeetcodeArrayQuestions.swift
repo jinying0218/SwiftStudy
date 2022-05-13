@@ -93,6 +93,49 @@ class Solution27 {
     }
 }
 
+// MARK: - 48. 旋转图像 https://leetcode.cn/problems/rotate-image/
+class Solution_48 {
+    
+    func reverseMatrix(_ nums: inout [Int]) {
+        var i = 0
+        var j = nums.count - 1
+        while j > i {
+            let temp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = temp
+            i += 1
+            j -= 1
+        }
+    }
+    
+    func showMatrix(_ matrix: [[Int]]) {
+        print("\n")
+        for i in 0..<matrix.count {
+            var log = ""
+            for j in matrix[i] {
+                log.append("\(j)\t")
+            }
+            print(log)
+        }
+        print("\n")
+    }
+    
+    func rotate(_ matrix: inout [[Int]]) {
+        let n = matrix.count
+        for i in 0..<n {
+            for j in i..<n {
+                let temp = matrix[i][j]
+                matrix[i][j] = matrix[j][i]
+                matrix[j][i] = temp
+            }
+        }
+        showMatrix(matrix)
+        for i in 0..<matrix.count {
+            reverseMatrix(&matrix[i])
+        }
+        showMatrix(matrix)
+    }
+}
 
 // MARK: - 75. 颜色分类  https://leetcode-cn.com/problems/sort-colors/
 class Solution75 {
@@ -342,10 +385,14 @@ func ArrayQuestions() {
 //    print("\(ret_2)")
     
     // MARK: - 1109. 航班预订统计
-    let bookings = [[1,2,10],[2,3,20],[2,5,25]]
-    let n = 5
-    let res_1 = Solution_1109().corpFlightBookings(bookings, n)
-    
-    print(res_1)
+//    let bookings = [[1,2,10],[2,3,20],[2,5,25]]
+//    let n = 5
+//    let res_1 = Solution_1109().corpFlightBookings(bookings, n)
+//
+//    print(res_1)
 
+    // MARK: - 48. 旋转图像
+    var nums = [[1,2,3],[4,5,6],[7,8,9]]
+    Solution_48().rotate(&nums)
+    
 }
